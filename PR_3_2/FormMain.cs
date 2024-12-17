@@ -36,7 +36,6 @@ namespace PR_3_2
         {
             if (this.db != null)
             {
-
                 if (this.dataGridViewPartners.CurrentRow != null)
                 {
                     var partner = (Partner)this.dataGridViewPartners.CurrentRow.DataBoundItem;
@@ -48,6 +47,13 @@ namespace PR_3_2
                     }
                 }
             }
+        }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+            this.db!.SaveChanges();
+
+            this.dataGridViewPartners.Refresh();
         }
     }
 }

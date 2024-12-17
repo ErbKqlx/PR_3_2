@@ -28,109 +28,107 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelLeft = new Panel();
-            dataGridViewPartners = new DataGridView();
-            panelRightTop = new Panel();
+            panelMain = new Panel();
             dataGridViewProducts = new DataGridView();
-            panelRightBottom = new Panel();
+            dataGridViewPartners = new DataGridView();
             dataGridViewPartnersProducts = new DataGridView();
-            panelLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPartners).BeginInit();
-            panelRightTop.SuspendLayout();
+            panelButtons = new Panel();
+            buttonSave = new Button();
+            panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).BeginInit();
-            panelRightBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPartners).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPartnersProducts).BeginInit();
+            panelButtons.SuspendLayout();
             SuspendLayout();
             // 
-            // panelLeft
+            // panelMain
             // 
-            panelLeft.Controls.Add(dataGridViewPartners);
-            panelLeft.Dock = DockStyle.Left;
-            panelLeft.Location = new Point(0, 0);
-            panelLeft.Margin = new Padding(4);
-            panelLeft.Name = "panelLeft";
-            panelLeft.Padding = new Padding(13, 14, 13, 14);
-            panelLeft.Size = new Size(463, 630);
-            panelLeft.TabIndex = 0;
-            // 
-            // dataGridViewPartners
-            // 
-            dataGridViewPartners.BackgroundColor = Color.White;
-            dataGridViewPartners.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPartners.Location = new Point(12, 12);
-            dataGridViewPartners.Name = "dataGridViewPartners";
-            dataGridViewPartners.Size = new Size(444, 601);
-            dataGridViewPartners.TabIndex = 0;
-            dataGridViewPartners.SelectionChanged += DataGridViewPartners_SelectionChanged;
-            // 
-            // panelRightTop
-            // 
-            panelRightTop.Controls.Add(dataGridViewProducts);
-            panelRightTop.Dock = DockStyle.Top;
-            panelRightTop.Location = new Point(463, 0);
-            panelRightTop.Margin = new Padding(4);
-            panelRightTop.Name = "panelRightTop";
-            panelRightTop.Padding = new Padding(13, 14, 13, 14);
-            panelRightTop.Size = new Size(565, 301);
-            panelRightTop.TabIndex = 1;
+            panelMain.Controls.Add(dataGridViewProducts);
+            panelMain.Controls.Add(dataGridViewPartners);
+            panelMain.Controls.Add(dataGridViewPartnersProducts);
+            panelMain.Dock = DockStyle.Bottom;
+            panelMain.Location = new Point(0, 87);
+            panelMain.Name = "panelMain";
+            panelMain.Padding = new Padding(10);
+            panelMain.Size = new Size(1032, 518);
+            panelMain.TabIndex = 3;
             // 
             // dataGridViewProducts
             // 
             dataGridViewProducts.BackgroundColor = Color.White;
             dataGridViewProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProducts.Location = new Point(7, 12);
+            dataGridViewProducts.Dock = DockStyle.Right;
+            dataGridViewProducts.Location = new Point(514, 10);
             dataGridViewProducts.Name = "dataGridViewProducts";
-            dataGridViewProducts.Size = new Size(546, 282);
+            dataGridViewProducts.Size = new Size(508, 297);
             dataGridViewProducts.TabIndex = 0;
             // 
-            // panelRightBottom
+            // dataGridViewPartners
             // 
-            panelRightBottom.Controls.Add(dataGridViewPartnersProducts);
-            panelRightBottom.Dock = DockStyle.Top;
-            panelRightBottom.Location = new Point(463, 301);
-            panelRightBottom.Margin = new Padding(4);
-            panelRightBottom.Name = "panelRightBottom";
-            panelRightBottom.Size = new Size(565, 329);
-            panelRightBottom.TabIndex = 2;
+            dataGridViewPartners.BackgroundColor = Color.White;
+            dataGridViewPartners.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewPartners.Dock = DockStyle.Left;
+            dataGridViewPartners.Location = new Point(10, 10);
+            dataGridViewPartners.Name = "dataGridViewPartners";
+            dataGridViewPartners.Size = new Size(498, 297);
+            dataGridViewPartners.TabIndex = 0;
+            dataGridViewPartners.SelectionChanged += DataGridViewPartners_SelectionChanged;
             // 
             // dataGridViewPartnersProducts
             // 
             dataGridViewPartnersProducts.BackgroundColor = Color.White;
             dataGridViewPartnersProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPartnersProducts.Location = new Point(7, 7);
+            dataGridViewPartnersProducts.Dock = DockStyle.Bottom;
+            dataGridViewPartnersProducts.Location = new Point(10, 307);
             dataGridViewPartnersProducts.Name = "dataGridViewPartnersProducts";
-            dataGridViewPartnersProducts.Size = new Size(546, 305);
+            dataGridViewPartnersProducts.Size = new Size(1012, 201);
             dataGridViewPartnersProducts.TabIndex = 0;
+            // 
+            // panelButtons
+            // 
+            panelButtons.Controls.Add(buttonSave);
+            panelButtons.Dock = DockStyle.Top;
+            panelButtons.Location = new Point(0, 0);
+            panelButtons.Name = "panelButtons";
+            panelButtons.Size = new Size(1032, 81);
+            panelButtons.TabIndex = 4;
+            // 
+            // buttonSave
+            // 
+            buttonSave.Location = new Point(14, 15);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(102, 50);
+            buttonSave.TabIndex = 0;
+            buttonSave.Text = "Сохранить";
+            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += ButtonSave_Click;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1028, 630);
-            Controls.Add(panelRightBottom);
-            Controls.Add(panelRightTop);
-            Controls.Add(panelLeft);
+            ClientSize = new Size(1032, 605);
+            Controls.Add(panelButtons);
+            Controls.Add(panelMain);
             Font = new Font("Segoe UI", 12F);
             Margin = new Padding(4);
             Name = "FormMain";
             Text = "Form1";
-            panelLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPartners).EndInit();
-            panelRightTop.ResumeLayout(false);
+            panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).EndInit();
-            panelRightBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPartners).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPartnersProducts).EndInit();
+            panelButtons.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panelLeft;
-        private Panel panelRightTop;
-        private Panel panelRightBottom;
-        private DataGridView dataGridViewPartners;
+        private Panel panelMain;
+        private Panel panelButtons;
+        private Button buttonSave;
         private DataGridView dataGridViewProducts;
         private DataGridView dataGridViewPartnersProducts;
+        private DataGridView dataGridViewPartners;
     }
 }
