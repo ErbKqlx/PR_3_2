@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.ApplicationServices;
 using PR_3_2.Models;
 using System.ComponentModel;
@@ -19,8 +20,8 @@ namespace PR_3_2
 
             this.db = new PartnersContext();
 
-            //this.db.Users.Load();
-            //this.dataGridViewUsers.DataSource = db.Users.Local.ToBindingList();
+            this.db.Partners.Load();
+            this.dataGridViewPartners.DataSource = db.Partners.Local.ToBindingList();
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -35,12 +36,16 @@ namespace PR_3_2
         {
             if (this.db != null)
             {
-                var partner = (Partner)this.dataGridViewPartners.CurrentRow.DataBoundItem;
 
-                if (partner != null)
+                if (this.dataGridViewPartners.CurrentRow != null)
                 {
-                    //this.db.Entry(user).Collection(e => e.Posts).Load();
-                    //this.dataGridViewPosts.DataSource = user.Posts;
+                    var partner = (Partner)this.dataGridViewPartners.CurrentRow.DataBoundItem;
+
+                    if (partner != null)
+                    {
+                        this.db.Entry(partner).Collection(e => e.PartnersProducts).Load();
+                        this.dataGridViewPartnersProducts.DataSource = partner.PartnersProducts;
+                    }
                 }
             }
         }

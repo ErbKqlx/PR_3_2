@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             panelLeft = new Panel();
-            panelRightTop = new Panel();
-            panelRightBottom = new Panel();
             dataGridViewPartners = new DataGridView();
+            panelRightTop = new Panel();
             dataGridViewProducts = new DataGridView();
+            panelRightBottom = new Panel();
             dataGridViewPartnersProducts = new DataGridView();
             panelLeft.SuspendLayout();
-            panelRightTop.SuspendLayout();
-            panelRightBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPartners).BeginInit();
+            panelRightTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).BeginInit();
+            panelRightBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPartnersProducts).BeginInit();
             SuspendLayout();
             // 
@@ -47,32 +47,11 @@
             panelLeft.Controls.Add(dataGridViewPartners);
             panelLeft.Dock = DockStyle.Left;
             panelLeft.Location = new Point(0, 0);
-            panelLeft.Margin = new Padding(4, 4, 4, 4);
+            panelLeft.Margin = new Padding(4);
             panelLeft.Name = "panelLeft";
             panelLeft.Padding = new Padding(13, 14, 13, 14);
             panelLeft.Size = new Size(463, 630);
             panelLeft.TabIndex = 0;
-            // 
-            // panelRightTop
-            // 
-            panelRightTop.Controls.Add(dataGridViewProducts);
-            panelRightTop.Dock = DockStyle.Top;
-            panelRightTop.Location = new Point(463, 0);
-            panelRightTop.Margin = new Padding(4, 4, 4, 4);
-            panelRightTop.Name = "panelRightTop";
-            panelRightTop.Padding = new Padding(13, 14, 13, 14);
-            panelRightTop.Size = new Size(565, 301);
-            panelRightTop.TabIndex = 1;
-            // 
-            // panelRightBottom
-            // 
-            panelRightBottom.Controls.Add(dataGridViewPartnersProducts);
-            panelRightBottom.Dock = DockStyle.Bottom;
-            panelRightBottom.Location = new Point(463, 301);
-            panelRightBottom.Margin = new Padding(4, 4, 4, 4);
-            panelRightBottom.Name = "panelRightBottom";
-            panelRightBottom.Size = new Size(565, 329);
-            panelRightBottom.TabIndex = 2;
             // 
             // dataGridViewPartners
             // 
@@ -82,6 +61,18 @@
             dataGridViewPartners.Name = "dataGridViewPartners";
             dataGridViewPartners.Size = new Size(444, 601);
             dataGridViewPartners.TabIndex = 0;
+            dataGridViewPartners.SelectionChanged += DataGridViewPartners_SelectionChanged;
+            // 
+            // panelRightTop
+            // 
+            panelRightTop.Controls.Add(dataGridViewProducts);
+            panelRightTop.Dock = DockStyle.Top;
+            panelRightTop.Location = new Point(463, 0);
+            panelRightTop.Margin = new Padding(4);
+            panelRightTop.Name = "panelRightTop";
+            panelRightTop.Padding = new Padding(13, 14, 13, 14);
+            panelRightTop.Size = new Size(565, 301);
+            panelRightTop.TabIndex = 1;
             // 
             // dataGridViewProducts
             // 
@@ -91,6 +82,16 @@
             dataGridViewProducts.Name = "dataGridViewProducts";
             dataGridViewProducts.Size = new Size(546, 282);
             dataGridViewProducts.TabIndex = 0;
+            // 
+            // panelRightBottom
+            // 
+            panelRightBottom.Controls.Add(dataGridViewPartnersProducts);
+            panelRightBottom.Dock = DockStyle.Top;
+            panelRightBottom.Location = new Point(463, 301);
+            panelRightBottom.Margin = new Padding(4);
+            panelRightBottom.Name = "panelRightBottom";
+            panelRightBottom.Size = new Size(565, 329);
+            panelRightBottom.TabIndex = 2;
             // 
             // dataGridViewPartnersProducts
             // 
@@ -111,14 +112,14 @@
             Controls.Add(panelRightTop);
             Controls.Add(panelLeft);
             Font = new Font("Segoe UI", 12F);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormMain";
             Text = "Form1";
             panelLeft.ResumeLayout(false);
-            panelRightTop.ResumeLayout(false);
-            panelRightBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewPartners).EndInit();
+            panelRightTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).EndInit();
+            panelRightBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewPartnersProducts).EndInit();
             ResumeLayout(false);
         }
