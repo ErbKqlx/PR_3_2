@@ -29,23 +29,17 @@
         private void InitializeComponent()
         {
             panelMain = new Panel();
-            dataGridViewProducts = new DataGridView();
-            dataGridViewPartners = new DataGridView();
-            dataGridViewPartnersProducts = new DataGridView();
+            dataGridViewAll = new DataGridView();
             panelButtons = new Panel();
             buttonSave = new Button();
             panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPartners).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPartnersProducts).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAll).BeginInit();
             panelButtons.SuspendLayout();
             SuspendLayout();
             // 
             // panelMain
             // 
-            panelMain.Controls.Add(dataGridViewProducts);
-            panelMain.Controls.Add(dataGridViewPartners);
-            panelMain.Controls.Add(dataGridViewPartnersProducts);
+            panelMain.Controls.Add(dataGridViewAll);
             panelMain.Dock = DockStyle.Bottom;
             panelMain.Location = new Point(0, 87);
             panelMain.Name = "panelMain";
@@ -53,36 +47,15 @@
             panelMain.Size = new Size(1032, 518);
             panelMain.TabIndex = 3;
             // 
-            // dataGridViewProducts
+            // dataGridViewAll
             // 
-            dataGridViewProducts.BackgroundColor = Color.White;
-            dataGridViewProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProducts.Dock = DockStyle.Right;
-            dataGridViewProducts.Location = new Point(514, 10);
-            dataGridViewProducts.Name = "dataGridViewProducts";
-            dataGridViewProducts.Size = new Size(508, 297);
-            dataGridViewProducts.TabIndex = 0;
-            // 
-            // dataGridViewPartners
-            // 
-            dataGridViewPartners.BackgroundColor = Color.White;
-            dataGridViewPartners.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPartners.Dock = DockStyle.Left;
-            dataGridViewPartners.Location = new Point(10, 10);
-            dataGridViewPartners.Name = "dataGridViewPartners";
-            dataGridViewPartners.Size = new Size(498, 297);
-            dataGridViewPartners.TabIndex = 0;
-            dataGridViewPartners.SelectionChanged += DataGridViewPartners_SelectionChanged;
-            // 
-            // dataGridViewPartnersProducts
-            // 
-            dataGridViewPartnersProducts.BackgroundColor = Color.White;
-            dataGridViewPartnersProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPartnersProducts.Dock = DockStyle.Bottom;
-            dataGridViewPartnersProducts.Location = new Point(10, 307);
-            dataGridViewPartnersProducts.Name = "dataGridViewPartnersProducts";
-            dataGridViewPartnersProducts.Size = new Size(1012, 201);
-            dataGridViewPartnersProducts.TabIndex = 0;
+            dataGridViewAll.BackgroundColor = Color.White;
+            dataGridViewAll.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewAll.Dock = DockStyle.Fill;
+            dataGridViewAll.Location = new Point(10, 10);
+            dataGridViewAll.Name = "dataGridViewAll";
+            dataGridViewAll.Size = new Size(1012, 498);
+            dataGridViewAll.TabIndex = 0;
             // 
             // panelButtons
             // 
@@ -116,9 +89,7 @@
             Name = "FormMain";
             Text = "Form1";
             panelMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPartners).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPartnersProducts).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAll).EndInit();
             panelButtons.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -127,8 +98,6 @@
         private Panel panelMain;
         private Panel panelButtons;
         private Button buttonSave;
-        private DataGridView dataGridViewProducts;
-        private DataGridView dataGridViewPartnersProducts;
-        private DataGridView dataGridViewPartners;
+        private DataGridView dataGridViewAll;
     }
 }
