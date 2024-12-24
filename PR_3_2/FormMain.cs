@@ -20,8 +20,8 @@ namespace PR_3_2
 
             this.db = new PartnersContext();
 
-            this.db.Partners.Load();
-            this.dataGridViewPartners.DataSource = db.Partners.Local.ToBindingList();
+            this.db.PartnersProducts.Load();
+            this.dataGridViewAll.DataSource = db.PartnersProducts.Local.ToBindingList();
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -32,28 +32,28 @@ namespace PR_3_2
             this.db = null;
         }
 
-        private void DataGridViewPartners_SelectionChanged(object sender, EventArgs e)
-        {
-            if (this.db != null)
-            {
-                if (this.dataGridViewPartners.CurrentRow != null)
-                {
-                    var partner = (Partner)this.dataGridViewPartners.CurrentRow.DataBoundItem;
+        //private void DataGridViewPartners_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    if (this.db != null)
+        //    {
+        //        if (this.dataGridViewPartners.CurrentRow != null)
+        //        {
+        //            var partner = (Partner)this.dataGridViewPartners.CurrentRow.DataBoundItem;
 
-                    if (partner != null)
-                    {
-                        this.db.Entry(partner).Collection(e => e.PartnersProducts).Load();
-                        this.dataGridViewPartnersProducts.DataSource = partner.PartnersProducts;
-                    }
-                }
-            }
-        }
+        //            if (partner != null)
+        //            {
+        //                this.db.Entry(partner).Collection(e => e.PartnersProducts).Load();
+        //                this.dataGridViewPartnersProducts.DataSource = partner.PartnersProducts;
+        //            }
+        //        }
+        //    }
+        //}
 
-        private void ButtonSave_Click(object sender, EventArgs e)
-        {
-            this.db!.SaveChanges();
+        //private void ButtonSave_Click(object sender, EventArgs e)
+        //{
+        //    this.db!.SaveChanges();
 
-            this.dataGridViewPartners.Refresh();
-        }
+        //    this.dataGridViewPartners.Refresh();
+        //}
     }
 }

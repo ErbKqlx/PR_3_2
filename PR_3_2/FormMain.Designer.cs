@@ -31,6 +31,8 @@
             panelMain = new Panel();
             dataGridViewAll = new DataGridView();
             panelButtons = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             buttonSave = new Button();
             panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAll).BeginInit();
@@ -59,6 +61,8 @@
             // 
             // panelButtons
             // 
+            panelButtons.Controls.Add(button2);
+            panelButtons.Controls.Add(button1);
             panelButtons.Controls.Add(buttonSave);
             panelButtons.Dock = DockStyle.Top;
             panelButtons.Location = new Point(0, 0);
@@ -66,15 +70,38 @@
             panelButtons.Size = new Size(1032, 81);
             panelButtons.TabIndex = 4;
             // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.BackColor = Color.White;
+            button2.Location = new Point(122, 15);
+            button2.Name = "button2";
+            button2.Size = new Size(127, 50);
+            button2.TabIndex = 2;
+            button2.Text = "Редактировать";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.BackColor = Color.White;
+            button1.Location = new Point(255, 15);
+            button1.Name = "button1";
+            button1.Size = new Size(102, 50);
+            button1.TabIndex = 1;
+            button1.Text = "Удалить";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // buttonSave
             // 
+            buttonSave.AutoSize = true;
+            buttonSave.BackColor = Color.White;
             buttonSave.Location = new Point(14, 15);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(102, 50);
             buttonSave.TabIndex = 0;
             buttonSave.Text = "Сохранить";
-            buttonSave.UseVisualStyleBackColor = true;
-            buttonSave.Click += ButtonSave_Click;
+            buttonSave.UseVisualStyleBackColor = false;
             // 
             // FormMain
             // 
@@ -91,6 +118,7 @@
             panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewAll).EndInit();
             panelButtons.ResumeLayout(false);
+            panelButtons.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -99,5 +127,7 @@
         private Panel panelButtons;
         private Button buttonSave;
         private DataGridView dataGridViewAll;
+        private Button button2;
+        private Button button1;
     }
 }
