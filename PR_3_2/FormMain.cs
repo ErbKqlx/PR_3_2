@@ -32,6 +32,11 @@ namespace PR_3_2
             this.db = null;
         }
 
+        private void ButtonAdd_Click(object sender, EventArgs e)
+        {
+            FormAdd formAdd = new();
+        }
+
         //private void DataGridViewPartners_SelectionChanged(object sender, EventArgs e)
         //{
         //    if (this.db != null)
